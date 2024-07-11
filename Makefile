@@ -10,20 +10,9 @@ OBJ_DIR = objects
 
 SRCS = color.c events.c main.c init.c atof.c julia.c mandelbrot.c parse_args.c render.c mandelbox.c
 
-# Generate object file names by replacing .c with .o in SRCS
 OBJ := $(SRCS:%.c=$(OBJ_DIR)/%.o)
-
-# Add SRC_DIR as a prefix to each source file
 SRCS := $(addprefix $(SRC_DIR)/,$(SRCS))
 
-# Rule to compile each .c file into .o
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
-
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-
-# Detecting system
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
 	MLX_DIR = libraries/minilibx-linux
@@ -39,17 +28,14 @@ else
 	CFLAGS += -DGL_SILENCE_DEPRECATION
 endif
 
-# Includes
 INC = -I$(LIBFT_DIR) $(MLX_INC)
 
-# Colours for output
 CYAN = \033[1;36m
 GREEN = \033[1;32m
 ORANGE = \033[1;33m
 RED = \033[1;31m
 RESET = \033[0m
 
-# Targets
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJ) $(LIBFT) $(MLX)
@@ -61,6 +47,12 @@ $(LIBFT):
 
 $(MLX):
 	@make -s -C $(MLX_DIR) --no-print-directory
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
 	@$(RM) $(OBJ_DIR)
@@ -75,4 +67,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
