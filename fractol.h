@@ -3,22 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:16:50 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/18 11:50:53 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 11:47:05 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <stdio.h>
-# include "libft/libft.h"
-# include <math.h>
-# include "minilibx-linux/mlx.h"
-# include <X11/X.h>
-# include <X11/keysym.h>
+# include "./libraries/libft/libft.h"
+
+#ifdef LINUX
+/* ----------------- Linux---------------- */
+#  include "./libraries/minilibx-linux/mlx.h"
+#  define ESC 65307
+#  define LEFT_KEY 65361
+#  define RIGHT_KEY 65363
+#  define UP_KEY 65362
+#  define DOWN_KEY 65364
+#  define MINUS 45
+#  define EQUAL 61
+#  define W_KEY 119
+#  define S_KEY 115
+#else
+/* ------------------ Mac ----------------- */
+#  include "./libraries/minilibx-mac/mlx.h"
+#  define ESC 0x35
+#  define LEFT_KEY 0x7B
+#  define RIGHT_KEY 0x7C
+#  define UP_KEY 0x7E
+#  define DOWN_KEY 0x7D
+#  define MINUS 0x1B
+#  define EQUAL 0x18
+#  define W_KEY 0x0D
+#  define S_KEY 0x01
+#endif
 
 // screen size
 # define WIDTH 1000

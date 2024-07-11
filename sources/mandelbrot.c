@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 13:08:06 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/13 13:10:54 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:20:24 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	mandelbrot(t_complex c, t_fractal *fractal)
 {

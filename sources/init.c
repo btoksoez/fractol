@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:58:26 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/14 14:33:36 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:28:20 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 /* set intitial data for fractal*/
 void	data_init(t_fractal *fractal)
@@ -28,10 +28,9 @@ void	data_init(t_fractal *fractal)
 /* intialize event hooks */
 void	events_init(t_fractal *fractal)
 {
-	mlx_hook(fractal->win, KeyPress, KeyPressMask, &key_press, fractal);
-	mlx_hook(fractal->win, DestroyNotify, StructureNotifyMask,
+	mlx_hook(fractal->win, 2, 1L << 0, &key_press, fractal);
+	mlx_hook(fractal->win, 17, 1L << 17,
 		&close_window, fractal);
-	mlx_mouse_hook(fractal->win, mouse_hook, fractal);
 }
 
 /* intialize mlx, window, image, events and data */
@@ -43,7 +42,9 @@ void	fractal_init(t_fractal *fractal)
 	fractal->win = mlx_new_window(fractal->mlx, WIDTH, HEIGHT, "Fractol");
 	if (fractal->win == NULL)
 	{
+		#ifdef LINUX
 		mlx_destroy_display(fractal->mlx);
+		#endif
 		free(fractal->mlx);
 		malloc_error();
 	}
@@ -51,7 +52,9 @@ void	fractal_init(t_fractal *fractal)
 	if (fractal->img.img_ptr == NULL)
 	{
 		mlx_destroy_window(fractal->mlx, fractal->win);
+		#ifdef LINUX
 		mlx_destroy_display(fractal->mlx);
+		#endif
 		free(fractal->mlx);
 		malloc_error();
 	}

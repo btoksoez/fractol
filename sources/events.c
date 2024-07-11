@@ -6,11 +6,11 @@
 /*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:02:45 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/05/22 10:24:53 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:21:12 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 static void	zoom(t_fractal *f, double zoom)
 {
@@ -56,25 +56,29 @@ static void	move(t_fractal *f, double distance, char direction)
 
 int	key_press(int keysym, t_fractal *fractal)
 {
-	if (keysym == XK_Escape)
+	if (keysym == ESC)
 		close_window(fractal);
-	if (keysym == XK_equal)
+	if (keysym == EQUAL)
 		fractal->max_iter += 10;
-	if (keysym == XK_minus)
+	if (keysym == MINUS)
 	{
 		if (fractal->max_iter > 10)
 			fractal->max_iter -= 10;
 		else
 			fractal->max_iter = 10;
 	}
-	if (keysym == XK_Left)
+	if (keysym == LEFT_KEY)
 		move(fractal, 0.1, 'L');
-	if (keysym == XK_Right)
+	if (keysym == RIGHT_KEY)
 		move(fractal, 0.1, 'R');
-	if (keysym == XK_Up)
+	if (keysym == UP_KEY)
 		move(fractal, 0.1, 'U');
-	if (keysym == XK_Down)
+	if (keysym == DOWN_KEY)
 		move(fractal, 0.1, 'D');
+	if (keysym == W_KEY)
+		zoom(fractal, 0.8);
+	if (keysym == S_KEY)
+		zoom(fractal, 1.2);
 	fractal_render(fractal);
 	return (0);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   atof.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:45:09 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/14 14:39:40 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:20:00 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	check_whitespace(const char *n, int *m)
 {

@@ -3,14 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+         #
+#    By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/08 14:20:21 by btoksoez          #+#    #+#              #
-#    Updated: 2024/03/18 11:54:49 by btoksoez         ###   ########.fr        #
+#    Updated: 2024/07/11 12:23:40 by btoksoez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memset.c		\
+NAME = libft.a
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
+
+OBJ_DIR = objects
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+RM = rm -rf
+
+SRC = ft_memset.c		\
 		ft_bzero.c		\
 		ft_memcpy.c		\
 		ft_memmove.c 	\
@@ -47,11 +55,7 @@ SRCS = ft_memset.c		\
 		ft_putnbr_base.c	\
 		ft_printf.c		\
 		ft_print_hex.c	\
-
-
-OBJS = $(SRCS:.c=.o)
-
-SRCSBNS =	ft_lstnew.c			\
+		ft_lstnew.c			\
 		ft_lstadd_front.c	\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
@@ -60,37 +64,35 @@ SRCSBNS =	ft_lstnew.c			\
 		ft_lstdelone.c		\
 		ft_lstiter.c		\
 		ft_lstmap.c			\
-		$(SRCS)
 
-OBJSBNS = $(SRCSBNS:.c=.o)
-
-NAME = libft.a
-
-CC = cc
-
-CC_FLAGS = -Wall -Werror -Wextra
-
-%.o: %.c
-	@$(CC) $(CC_FLAGS) -c $< -o $@
-
-$(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
-	@echo "$(NAME) created."
+# Colours
+CYAN = \033[1;36m
+ORANGE = \033[1;33m
+GREEN = \033[1;32m
+RED = \033[1;31m
+RESET = \033[0m
 
 all: $(NAME)
 
-clean:
-	@rm -rf $(OBJS) $(OBJSBNS)
-	@echo "$(OBJS) deleted."
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@ar rcs $@ $(OBJ)
+	@echo "$(CYAN)make$(RESET)   libft $(GREEN)[OK]$(RESET)"
 
-fclean: clean
-	rm -f $(NAME)
+$(OBJ_DIR)/%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $@
+
+clean:
+	@$(RM) $(OBJ_DIR)
+	@echo "$(ORANGE)$@$(RESET)  libft $(GREEN)[OK]$(RESET)"
+
+fclean:
+	@$(RM) $(NAME)
+	@echo "$(RED)$@$(RESET) libft $(GREEN)[OK]$(RESET)"
 
 re: fclean all
 
-bonus: $(OBJSBNS) $(NAME)
-	@ar rc $(NAME) $(OBJSBNS)
-	@echo "$(NAME) Bonus created."
+.PHONY: all clean fclean re
 
-
-.PHONY: clean fclean re all bonus

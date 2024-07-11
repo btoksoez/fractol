@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:06:32 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/14 14:42:42 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:28:26 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 void	malloc_error(void)
 {
@@ -23,7 +23,9 @@ int	close_window(t_fractal *fr)
 	ft_printf("Closing Window");
 	mlx_destroy_window(fr->mlx, fr->win);
 	mlx_destroy_image(fr->mlx, fr->img.img_ptr);
-	mlx_destroy_display(fr->mlx);
+	#ifdef LINUX
+	mlx_destroy_display(fractal->mlx);
+	#endif
 	free(fr->mlx);
 	exit(1);
 }

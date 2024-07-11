@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:29:32 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/14 14:44:35 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 11:32:07 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdarg.h>
+# include <stdio.h>
+# include <math.h>
 
 typedef struct s_list
 {

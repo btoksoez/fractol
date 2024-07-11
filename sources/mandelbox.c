@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbox.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btoksoez <btoksoez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btoksoez <btoksoez@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:49:18 by btoksoez          #+#    #+#             */
-/*   Updated: 2024/03/14 12:12:54 by btoksoez         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:20:21 by btoksoez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 static double	box_fold(double v)
 {
