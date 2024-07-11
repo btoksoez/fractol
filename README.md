@@ -3,7 +3,7 @@
 Welcome to my Fractol project repository. This project is part of the 42 curriculum and involves creating a basic computer graphics application to explore the fascinating world of fractals using the MiniLibX library. You will be able to visualize the Julia set, the Mandelbrot set and the Mandelbox set, zoom into them, change the resolution and experiment with different parameters to see the beautiful complexity of these mathematical objects.
 
 
-<img src="./imgs/mandelbrot.png" width="250" alt="mandelbrot"> <img src=".imgs/julia.png" width="250"  alt="julia"> <img src="./imgs/mandelbox.png" width="250" alt="mandelbox">
+<img src="./imgs/mandelbrot.png" width="250" alt="mandelbrot"> <img src="./imgs/julia.png" width="250"  alt="julia"> <img src="./imgs/mandelbox.png" width="250" alt="mandelbox">
 
 
 
