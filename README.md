@@ -27,6 +27,7 @@ This project leverages the MiniLibX graphical library to render and explore frac
 
 - **Fractal Sets:** Render the Julia, Mandelbrot or Mandelbox set.
 - **Zooming:** Use the W and S keys to zoom in and out, exploring the fractals almost infinitely.
+- **Changing Resolution**: Use the '-' and '=' keys to increase and decrease the rendered resolution.
 - **Dynamic Julia Sets:** Create different Julia sets by passing various parameters to the program.
 - **Rendering Options:** Define fractal types and rendering options through command line parameters.
 - **Psychedelic Colors:** Use the key "lsd" in the command line to render some psychedelic color effects.
