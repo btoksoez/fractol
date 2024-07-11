@@ -3,7 +3,7 @@
 Welcome to my Fractol project repository. This project is part of the 42 curriculum and involves creating a basic computer graphics application to explore the fascinating world of fractals using the MiniLibX library. You will be able to visualize the Julia set, the Mandelbrot set and the Mandelbox set, zoom into them, change the resolution and experiment with different parameters to see the beautiful complexity of these mathematical objects.
 
 
-<img src="./mandelbrot.png" width="300" height="300" alt="mandelbrot"> <img src="./julia.png" width="300" height="300" alt="julia"> <img src="./mandelbox.png" width="300" height="300" alt="mandelbox">
+<img src="./imgs/mandelbrot.png" width="200" height="200" alt="mandelbrot"> <img src=".imgs/julia.png" width="200" height="200" alt="julia"> <img src="./imgs/mandelbox.png" width="200" height="200" alt="mandelbox">
 
 
 
@@ -19,7 +19,7 @@ Welcome to my Fractol project repository. This project is part of the 42 curricu
 
 A fractal is an abstract mathematical object, like a curve or a surface, whose pattern remains the same at every scale. The term "fractal" was first used by mathematician Benoit Mandelbrot in 1974, based on the Latin word "fractus," meaning "broken" or "fractured." Various natural phenomena, such as the romanesco cabbage, exhibit fractal features.
 
-<img src="http://images6.fanpop.com/image/photos/36600000/Green-image-green-36661177-2500-1875.jpg" width="500" height="375" alt="fractals_in_nature"> <img src="https://iternal.us/wp-content/uploads/2020/03/Fractal-Aloe-Leaves.jpg" width="500" height="375" alt="fractals">
+<img src="http://images6.fanpop.com/image/photos/36600000/Green-image-green-36661177-2500-1875.jpg" width="300" height="275" alt="fractals_in_nature"> <img src="https://iternal.us/wp-content/uploads/2020/03/Fractal-Aloe-Leaves.jpg" width="300" height="275" alt="fractals">
 
 This project leverages the MiniLibX graphical library to render and explore fractals. The MiniLibX library includes the basic tools necessary to open a window, create images, and handle keyboard events.
 
